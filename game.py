@@ -46,8 +46,8 @@ def format(content):
             in_explanation = True
             explanation = explanation + line
 
-        elif 'https' in line:
-            index = line.find('https')
+        elif 'http' in line:
+            index = line.find('http')
             reference = "Reference: " + line[index:]
             url = line[index:]
         
@@ -91,7 +91,7 @@ def quiz(ques, num=0):
             score = score + 1
             print('\n¡Correcto!')
             if ques[i] in wrong_ans:
-                good_ans.append(i)
+                good_ans.append(ques[i])
         else:
             print(f"\nIncorrecto\nRespuesta correcta: {corr_ans}")
             if ques[i] not in wrong_ans:
@@ -112,8 +112,7 @@ def quiz(ques, num=0):
         os.system('cls' if os.name == 'nt' else 'clear')
 
     for i in good_ans:
-        if ques[i] in wrong_ans:
-            wrong_ans.pop(i)
+        wrong_ans.remove(i)
 
     return score
 
