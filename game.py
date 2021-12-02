@@ -152,11 +152,14 @@ if __name__ == '__main__':
         get_questions.run_get_questions(num)
 
     finally:
-        with open("QuestionsUwU.txt", "r", encoding="utf8") as file:
-            content = file.read().splitlines()
-        format(content)
-        r = 'y'
-        while r == 'y':
-            game()
-            r = input('Jugar de nuevo?(y/n): ').lower()
+        try:
+            with open("QuestionsUwU.txt", "r", encoding="utf8") as file:
+                content = file.read().splitlines()
+            format(content)
+            r = 'y'
+            while r == 'y':
+                game()
+                r = input('Jugar de nuevo?(y/n): ').lower()
+        except Exception as err:
+            print(err)
    
