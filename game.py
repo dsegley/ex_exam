@@ -105,7 +105,7 @@ def game():
         input()
         os.system('cls' if os.name == 'nt' else 'clear')
 
-    input(f"\nAcertó {score}/{num_of_exer} ")
+    input(f"\nAcertó {score}/{num_of_exer}\n{score/num_of_exer * 100}% ")
 
 
 if __name__ == '__main__':
