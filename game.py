@@ -140,8 +140,6 @@ def game():
 
 
 if __name__ == '__main__':
-    random.seed(datetime.now().second)
-
     try:
         with open("QuestionsUwU.txt", "r", encoding="utf8") as file:
             content = file.read().splitlines()
